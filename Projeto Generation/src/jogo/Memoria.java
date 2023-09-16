@@ -70,7 +70,7 @@ public class Memoria extends Jogo{
         System.out.println("_____________________¶¶¶¶¶¶                                             ");
         System.out.println("\n\n");
         System.out.println("╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳");
-        System.out.println("Você terá 5 segundos para memorizar uma sequência de números.");
+        System.out.println("\n\nVocê terá 5 segundos para memorizar uma sequência de números.");
     }
 
     @Override
@@ -132,7 +132,7 @@ public class Memoria extends Jogo{
         System.out.println("__¶¶_¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_¶¶");
         System.out.println("__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
 
-        System.out.println("Digite a sequência que você lembra (ex: 1 2 3): \n\n");
+        System.out.println("\n\nDigite a sequência que você lembra (ex: 1 2 3): \n\n");
 
             List<Integer> entradaUsuario = new ArrayList<>();
             for (int i = 0; i < sequenciaLength; i++) {

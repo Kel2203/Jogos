@@ -22,7 +22,7 @@ public class MenuPrincipal {
         int opcao;
 
         do {
-            System.out.print("ESCOLHA UMA OPÇÃO DE JOGO 0, 1, 2 ou 3: ");
+            System.out.print("\n\nESCOLHA UMA OPÇÃO DE JOGO 0, 1, 2 ou 3: ");
             opcao = sc.nextInt();
 
             switch (opcao){

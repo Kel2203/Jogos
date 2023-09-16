@@ -36,7 +36,7 @@ public class Adivinhacao extends Jogo {
     @Override
     public void jogar() {
 
-            System.out.println("Escolha: ");
+            System.out.print("Escolha: ");
             escolha = scanner.nextInt();
 
             switch (escolha) {
@@ -49,7 +49,7 @@ public class Adivinhacao extends Jogo {
             // loop principal do jogo
             for (int i = 1; i <= totalDeTentativas; i++) {
 
-            System.out.printf("Tentativa %d de %d\n", i, totalDeTentativas);
+            System.out.printf("\nTentativa %d de %d\n", i, totalDeTentativas);
 
             System.out.print("Chute um número: ");
             chute = scanner.nextInt();
@@ -67,9 +67,9 @@ public class Adivinhacao extends Jogo {
             if(acertou) {
                 break;
             } else if(chute > numeroSecreto) {
-                System.out.println("Seu chute foi maior do que o número secreto!");
+                System.out.println("\nSeu chute foi +MAIOR+ do que o número secreto!");
             } else {
-                System.out.println("Seu chute foi menor do que o número secreto!");
+                System.out.println("\nSeu chute foi -MENOR- do que o número secreto!");
             }
 
             // calcula a quantidade de pontos
@@ -97,7 +97,7 @@ public class Adivinhacao extends Jogo {
             System.out.println("      OOOOOO   OOOOOOOOO   OOOOOO      ");
             System.out.println("         OOOOOO         OOOOOO         ");
             System.out.println("             OOOOOOOOOOOO              ");
-            System.out.println("Parabéns! Você acertou!");
+            System.out.println("\n\nParabéns! Você acertou!");
             System.out.printf("Você fez %.2f pontos. Até a próxima!\n\n", pontos);
         } else {
 
@@ -107,7 +107,7 @@ public class Adivinhacao extends Jogo {
             System.out.println("       /_( \\__/ )_\\    ");
             System.out.println("          \\__U_/        ");
 
-            System.out.println("Você perdeu! Tente novamente!");
+            System.out.println("Você perdeu! Tente novamente!\n");
         }
 
 

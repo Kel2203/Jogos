@@ -60,7 +60,7 @@ System.out.println("───────────────▓▓▓▓▓
         while (erros < 6) {
             System.out.println(palavraEmbaralhada);
             // Solicita uma entrada do usuário
-            System.out.println("Digite uma letra: ");
+            System.out.print("Digite uma letra: ");
             String letra = new Scanner(System.in).next().toLowerCase();
 
             boolean letraEncontrada = false;
