@@ -1,9 +1,10 @@
 package jogo;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import jogo.util.Cores;
+
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Forca extends Jogo{
     protected String palavraSecreta;
@@ -18,7 +19,7 @@ public class Forca extends Jogo{
     public void cabecalho(){
 
               System.out.println("\n\n");
-System.out.println("───────────▒▒▒▒▒▒▒▒                                                    ");
+System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT+"───────────▒▒▒▒▒▒▒▒                                                    ");
 System.out.println("─────────▒▒▒──────▒▒▒                                                  ");
 System.out.println("────────▒▒───▒▒▒▒──▒░▒                                                 ");
 System.out.println("───────▒▒───▒▒──▒▒──▒░▒                                                ");
@@ -43,31 +44,37 @@ System.out.println("──────▓▓▒▒▒▒▒▒▒▒▒▒▒▒
 System.out.println("───────▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓                                         ");
 System.out.println("─────────▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓                                           ");
 System.out.println("───────────▓▓▓▓▓▓▒▒▒▒▒▓▓▓▓                                             ");
-System.out.println("───────────────▓▓▓▓▓▓▓▓                                                ");
+System.out.println("───────────────▓▓▓▓▓▓▓▓                                                "+Cores.TEXT_RESET);
             System.out.println("\n\n");
 
-        System.out.println("╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳");
+        System.out.println(Cores.TEXT_YELLOW_BOLD_BRIGHT+"╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳");
         System.out.println("\nVocê terá que acertar a palavra.");
     }
 
     @Override
     public void jogar(){
+    	Scanner scanner = new Scanner(System.in);
 
-            palavraSecreta = gerarPalavraSecreta();
+        Forca forca = new Forca();
+        String palavraSecreta = forca.getPalavraSecretaRandom();
             palavraEmbaralhada = palavraSecreta.replaceAll(".", "*");
             erros = 0;
 
+
         while (erros < 6) {
             System.out.println(palavraEmbaralhada);
+            
             // Solicita uma entrada do usuário
-            System.out.print("Digite uma letra: ");
-            String letra = new Scanner(System.in).next().toLowerCase();
 
+            System.out.print(Cores.TEXT_YELLOW_BOLD_BRIGHT+"Digite uma letra: ");
+            String letra = scanner.next().toLowerCase();
+            
             boolean letraEncontrada = false;
 
             // Verifica se a letra está na palavra secreta
             for (int i = 0; i < palavraSecreta.length(); i++) {
-                if (palavraSecreta.charAt(i) == letra.charAt(0)) {
+               
+				if (palavraSecreta.charAt(i) == letra.charAt(0)) {
                     // Substitui o asterisco pela letra correta na posição correta
                     palavraEmbaralhada = palavraEmbaralhada.substring(0, i) + letra + palavraEmbaralhada.substring(i + 1);
                     letraEncontrada = true;
@@ -81,8 +88,8 @@ System.out.println("───────────────▓▓▓▓▓
 
             // Verifica se o jogo acabou
             if (palavraEmbaralhada.equals(palavraSecreta)) {
-                System.out.println("PARABÉNS, VOCÊ VENCEU!");
-                System.out.println("_________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶__________________");
+                System.out.println(Cores.TEXT_YELLOW_BOLD+"\nPARABÉNS, VOCÊ VENCEU!");
+                System.out.println("\n\n_________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶__________________");
                 System.out.println("_____________¶¶¶________________¶¶¶_______________");
                 System.out.println("___________¶¶______________________¶¶¶¶___________");
                 System.out.println("_________¶¶¶__________________________¶¶¶_________");
@@ -117,9 +124,9 @@ System.out.println("───────────────▓▓▓▓▓
         }
 
         if (erros == 6) {
-            System.out.println("VOCÊ PERDEU!");
-            System.out.println("A palavra secreta era -> " + palavraSecreta);
-            System.out.println("──────────────────────────────────");
+            System.out.println(Cores.TEXT_RED_BOLD+ "\nVOCÊ PERDEU!");
+            System.out.println(Cores.TEXT_CYAN_BOLD+ "\n\nA palavra secreta era -> " + palavraSecreta);
+            System.out.println(Cores.TEXT_RED_BOLD+"\n\n──────────────────────────────────");
             System.out.println("─────────▄▄───────────────────▄▄──");
             System.out.println("──────────▀█───────────────────▀█─");
             System.out.println("──────────▄█───────────────────▄█─");
@@ -136,12 +143,15 @@ System.out.println("───────────────▓▓▓▓▓
             System.out.println("──────────────────────────────────");
             System.out.println("───────────█████████████──────────");
             System.out.println("──────────────────────────────────");
-            System.out.println("──────────────────────────────────");
+            System.out.println("──────────────────────────────────"+ Cores.TEXT_RESET);
         }
     }
-    private String gerarPalavraSecreta() {
+
         // Obtém uma lista de palavras
-        List<String> palavras = new ArrayList<>();
+       private List<String> palavras;
+        public Forca(){
+
+            palavras =  new ArrayList<>();
         palavras.add("tucano");
         palavras.add("vermelho");
         palavras.add("copo");
@@ -165,7 +175,20 @@ System.out.println("───────────────▓▓▓▓▓
         palavras.add("toalha");
         palavras.add("peixe");
 
+        // Gera uma palavra secreta aleatória
+//        int index = new Random().nextInt(palavras.size());
+//        return palavras.get(index);
 
+    }
+    public List<String> getPalavrasPorNivel(int nivel) {
+        // Filtra as palavras para incluir apenas as palavras que têm o número especificado de letras.
+ 
+        return palavras.stream()
+                .filter(palavra -> palavra.length() == nivel)
+                .collect(Collectors.toList());
+    }
+
+    public String getPalavraSecretaRandom() {
         // Gera uma palavra secreta aleatória
         int index = new Random().nextInt(palavras.size());
         return palavras.get(index);

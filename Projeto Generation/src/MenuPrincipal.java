@@ -1,11 +1,13 @@
 import jogo.Adivinhacao;
 import jogo.Forca;
 import jogo.Memoria;
+import jogo.util.Cores;
 import menu.MenuJogo;
 import menu.MenuMain;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.Stack;
+
 
 public class MenuPrincipal {
     public static void main(String[] args) {
@@ -19,11 +21,19 @@ public class MenuPrincipal {
 
 
         menuPrincipal.menu();
-        int opcao;
+        int opcao = 0;
 
         do {
-            System.out.print("\n\nESCOLHA UMA OPÇÃO DE JOGO 0, 1, 2 ou 3: ");
+        	
+        	try {
+            System.out.print(Cores.TEXT_CYAN_BOLD+"\n\nESCOLHA UMA OPÇÃO DE JOGO 0, 1, 2 ou 3: ");
             opcao = sc.nextInt();
+            }catch(InputMismatchException e){
+            	System.err.println("\nERRO: " + e);
+            	System.out.println("\nDigite apenas números, por favor!"+Cores.TEXT_RESET);
+                sc.nextLine();
+            }
+        	
 
             switch (opcao){
                 case 1 :
@@ -44,11 +54,12 @@ public class MenuPrincipal {
                         memoria.jogar();
                     break;
                 case 0:
-                    System.out.println("Programa encerrado!");
+                    System.out.println(Cores.TEXT_CYAN_BOLD +"\n\nPrograma encerrado!");
                     break;
                 default :
-                    System.out.println("Algo de errado não esta certo!");
+                    System.out.println("\n\nAlgo de errado não esta certo!" + Cores.TEXT_RESET);
             }
+            
 
         }while (opcao != 0);
 
