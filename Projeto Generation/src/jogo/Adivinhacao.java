@@ -5,7 +5,7 @@ import jogo.util.Cores;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.stream.Stream;
+
 
 public class Adivinhacao extends Jogo {
 

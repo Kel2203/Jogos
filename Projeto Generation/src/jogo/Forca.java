@@ -4,7 +4,7 @@ import jogo.util.Cores;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+
 
 public class Forca extends Jogo{
     protected String palavraSecreta;
@@ -145,13 +145,14 @@ System.out.println("───────────────▓▓▓▓▓
             System.out.println("──────────────────────────────────");
             System.out.println("──────────────────────────────────"+ Cores.TEXT_RESET);
         }
+
     }
 
         // Obtém uma lista de palavras
        private List<String> palavras;
         public Forca(){
 
-            palavras =  new ArrayList<>();
+        palavras =  new ArrayList<>();
         palavras.add("tucano");
         palavras.add("vermelho");
         palavras.add("copo");
@@ -175,10 +176,6 @@ System.out.println("───────────────▓▓▓▓▓
         palavras.add("toalha");
         palavras.add("peixe");
 
-        // Gera uma palavra secreta aleatória
-//        int index = new Random().nextInt(palavras.size());
-//        return palavras.get(index);
-
     }
     public List<String> getPalavrasPorNivel(int nivel) {
         // Filtra as palavras para incluir apenas as palavras que têm o número especificado de letras.
@@ -193,4 +190,6 @@ System.out.println("───────────────▓▓▓▓▓
         int index = new Random().nextInt(palavras.size());
         return palavras.get(index);
     }
+
+
 }

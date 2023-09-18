@@ -5,7 +5,6 @@ package jogo;
 import jogo.util.Cores;
 
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 public class Memoria extends Jogo{
 
     private static List<Integer> gerarSequencia(int length) {
@@ -179,7 +178,7 @@ public class Memoria extends Jogo{
             } else {
                 System.out.println("\n\nVocê errou. A sequência correta era: " + sequencia);
 
-                System.out.println(Cores.TEXT_RED_BOLD+"\n\n███████▄▄███████████▄ ");
+                System.out.println(Cores.TEXT_RED_BOLD + "\n\n███████▄▄███████████▄ ");
                 System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░█");
                 System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░█");
                 System.out.println("▓▓▓▓▓▓█░░░░░░░░░░░░░░█");
@@ -191,8 +190,8 @@ public class Memoria extends Jogo{
                 System.out.println("░░░░░░░░░░█░░░█       ");
                 System.out.println("░░░░░░░░░░░█░░█       ");
                 System.out.println("░░░░░░░░░░░█░░█       ");
-                System.out.println("░░░░░░░░░░░░▀▀        "+Cores.TEXT_RESET);
-                    System.out.println("\n\n");
+                System.out.println("░░░░░░░░░░░░▀▀        " + Cores.TEXT_RESET);
+                System.out.println("\n\n");
 
             }
         }
