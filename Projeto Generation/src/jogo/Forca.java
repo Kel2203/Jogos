@@ -1,6 +1,7 @@
 package jogo;
 
 import jogo.util.Cores;
+import jogo.util.Imprimir;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -17,38 +18,7 @@ public class Forca extends Jogo{
 
     @Override
     public void cabecalho(){
-
-              System.out.println("\n\n");
-System.out.println(Cores.TEXT_WHITE_BOLD_BRIGHT+"───────────▒▒▒▒▒▒▒▒                                                    ");
-System.out.println("─────────▒▒▒──────▒▒▒                                                  ");
-System.out.println("────────▒▒───▒▒▒▒──▒░▒                                                 ");
-System.out.println("───────▒▒───▒▒──▒▒──▒░▒                                                ");
-System.out.println("──────▒▒░▒──────▒▒──▒░▒                                                ");
-System.out.println("───────▒▒░▒────▒▒──▒░▒                                                 ");
-System.out.println("─────────▒▒▒▒▒▒▒───▒▒                                                  ");
-System.out.println("─────────────────▒▒▒                                                   ");
-System.out.println("─────▒▒▒▒────────▒▒                                                    ");
-System.out.println("───▒▒▒░░▒▒▒─────▒▒──▓▓▓▓▓▓▓▓                                           ");
-System.out.println("──▒▒─────▒▒▒────▒▒▓▓▓▓▓░░░░░▓▓──▓▓▓▓                                   ");
-System.out.println("─▒───▒▒────▒▒─▓▓▒░░░░░░░░░█▓▒▓▓▓▓░░▓▓▓                                 ");
-System.out.println("▒▒──▒─▒▒───▓▒▒░░▒░░░░░████▓▓▒▒▓░░░░░░▓▓        SEJA BEM VINDE AO       ");
-System.out.println("░▒▒───▒──▓▓▓░▒░░░░░░█████▓▓▒▒▒▒▓▓▓▓▓░░▓▓         JOGO DA FORCA!        ");
-System.out.println("──▒▒▒▒──▓▓░░░░░░███████▓▓▓▒▒▒▒▒▓───▓▓░▓▓                               ");
-System.out.println("──────▓▓░░░░░░███████▓▓▓▒▒▒▒▒▒▒▓───▓░░▓▓                               ");
-System.out.println("─────▓▓░░░░░███████▓▓▓▒▒▒▒▒▒▒▒▒▓▓▓▓░░▓▓                                ");
-System.out.println("────▓▓░░░░██████▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▓░░░░▓▓                                 ");
-System.out.println("────▓▓▓░████▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓                                   ");
-System.out.println("─────▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓                                       ");
-System.out.println("─────▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓                                       ");
-System.out.println("──────▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓                                        ");
-System.out.println("───────▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓                                         ");
-System.out.println("─────────▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓                                           ");
-System.out.println("───────────▓▓▓▓▓▓▒▒▒▒▒▓▓▓▓                                             ");
-System.out.println("───────────────▓▓▓▓▓▓▓▓                                                "+Cores.TEXT_RESET);
-            System.out.println("\n\n");
-
-        System.out.println(Cores.TEXT_YELLOW_BOLD_BRIGHT+"╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳╳");
-        System.out.println("\nVocê terá que acertar a palavra.");
+       Imprimir.imprimirCabecalhoForca();
     }
 
     @Override
@@ -88,62 +58,14 @@ System.out.println("───────────────▓▓▓▓▓
 
             // Verifica se o jogo acabou
             if (palavraEmbaralhada.equals(palavraSecreta)) {
-                System.out.println(Cores.TEXT_YELLOW_BOLD+"\nPARABÉNS, VOCÊ VENCEU!");
-                System.out.println("\n\n_________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶__________________");
-                System.out.println("_____________¶¶¶________________¶¶¶_______________");
-                System.out.println("___________¶¶______________________¶¶¶¶___________");
-                System.out.println("_________¶¶¶__________________________¶¶¶_________");
-                System.out.println("_______¶¶¶___________________¶¶¶¶_______¶¶________");
-                System.out.println("_¶¶¶¶¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶_____¶¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶__");
-                System.out.println("__¶¶¶¶____¶¶¶¶¶¶¶¶¶_¶¶¶¶¶¶¶¶¶____¶¶¶¶¶¶¶¶¶¶¶¶¶¶___");
-                System.out.println("___¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶___¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶____¶¶¶____");
-                System.out.println("__¶___¶¶¶¶¶¶¶¶______¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶______¶¶__¶__");
-                System.out.println("_¶¶___¶¶¶¶¶¶¶¶¶______¶¶¶¶¶¶¶¶¶¶¶¶¶¶_______¶¶__¶¶__");
-                System.out.println("¶______¶¶¶¶¶¶¶¶_____¶¶¶___¶¶¶¶¶¶¶¶¶___¶¶¶¶¶____¶__");
-                System.out.println("¶__________¶¶¶¶¶¶¶¶¶¶¶______¶¶¶¶¶¶¶¶¶¶¶__¶______¶¶");
-                System.out.println("¶_______________________________________________¶¶");
-                System.out.println("¶________¶¶_____________________________________¶¶");
-                System.out.println("¶______¶¶¶¶_________________________¶¶¶¶________¶¶");
-                System.out.println("¶_____¶__¶¶_________________________¶¶¶¶________¶¶");
-                System.out.println("¶_________¶¶¶______________________¶¶___________¶¶");
-                System.out.println("¶___________¶¶¶__________________¶¶¶____________¶¶");
-                System.out.println("¶¶____________¶¶¶¶____________¶¶¶¶_____________¶__");
-                System.out.println("_¶¶______________¶¶¶¶¶¶¶¶¶¶¶¶¶¶________________¶__");
-                System.out.println("__¶___________________________________________¶¶__");
-                System.out.println("___¶¶________________________________________¶¶___");
-                System.out.println("____¶¶______________________________________¶¶____");
-                System.out.println("_____¶¶___________________________________¶¶______");
-                System.out.println("_______¶¶_______________________________¶¶¶_______");
-                System.out.println("_________¶¶___________________________¶¶¶_________");
-                System.out.println("__________¶¶¶¶_____________________¶¶_____________");
-                System.out.println("______________¶¶¶¶_____________¶¶¶¶¶______________");
-                System.out.println("___________________¶¶¶¶¶¶¶¶¶¶¶¶___________________");
-
-                break; // Encerra o loop, pois o jogo foi vencido
+               Imprimir.imprimirAcerto();
+                break;
             }
         }
 
         if (erros == 6) {
-            System.out.println(Cores.TEXT_RED_BOLD+ "\nVOCÊ PERDEU!");
             System.out.println(Cores.TEXT_CYAN_BOLD+ "\n\nA palavra secreta era -> " + palavraSecreta);
-            System.out.println(Cores.TEXT_RED_BOLD+"\n\n──────────────────────────────────");
-            System.out.println("─────────▄▄───────────────────▄▄──");
-            System.out.println("──────────▀█───────────────────▀█─");
-            System.out.println("──────────▄█───────────────────▄█─");
-            System.out.println("──█████████▀───────────█████████▀─");
-            System.out.println("───▄██████▄─────────────▄██████▄──");
-            System.out.println("─▄██▀────▀██▄─────────▄██▀────▀██▄");
-            System.out.println("─██────────██─────────██────────██");
-            System.out.println("─██───██───██─────────██───██───██");
-            System.out.println("─██────────██─────────██────────██");
-            System.out.println("──██▄────▄██───────────██▄────▄██─");
-            System.out.println("───▀██████▀─────────────▀██████▀──");
-            System.out.println("──────────────────────────────────");
-            System.out.println("──────────────────────────────────");
-            System.out.println("──────────────────────────────────");
-            System.out.println("───────────█████████████──────────");
-            System.out.println("──────────────────────────────────");
-            System.out.println("──────────────────────────────────"+ Cores.TEXT_RESET);
+            Imprimir.imprimirErro();
         }
 
     }
@@ -175,11 +97,22 @@ System.out.println("───────────────▓▓▓▓▓
         palavras.add("lilas");
         palavras.add("toalha");
         palavras.add("peixe");
+        palavras.add("rosa");
+        palavras.add("cortina");
+        palavras.add("pato");
+        palavras.add("roxo");
+        palavras.add("mesa");
+        palavras.add("cavalo");
+        palavras.add("marrom");
+        palavras.add("sofa");
+        palavras.add("cabra");
+        palavras.add("laranja");
+        palavras.add("cadeira");
+
 
     }
     public List<String> getPalavrasPorNivel(int nivel) {
         // Filtra as palavras para incluir apenas as palavras que têm o número especificado de letras.
- 
         return palavras.stream()
                 .filter(palavra -> palavra.length() == nivel)
                 .collect(Collectors.toList());
@@ -190,6 +123,5 @@ System.out.println("───────────────▓▓▓▓▓
         int index = new Random().nextInt(palavras.size());
         return palavras.get(index);
     }
-
 
 }

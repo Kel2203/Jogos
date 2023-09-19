@@ -8,7 +8,7 @@ public class MenuJogo implements Menu{
     public void menu() {
         System.out.println(Cores.TEXT_PURPLE_BOLD + "\n\n◆ ▬▬▬▬▬▬▬▬▬▬▬▬ ❴✪❵ ▬▬▬▬▬▬▬▬▬▬▬▬ ◆");
         
-        System.out.println(Cores.TEXT_GREEN_BOLD
+        System.out.println(Cores.TEXT_CYAN_BOLD
                 +"Escolha o nível de dificuldade:");
         System.out.println("1. Fácil");
         System.out.println("2. Médio");

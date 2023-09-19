@@ -10,7 +10,8 @@ public class MenuMain implements Menu{
         System.out.println(Cores.TEXT_RED +
                 "\n▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄");
 
-        System.out.println(Cores.TEXT_CYAN_BOLD+"\n1 - Adivinhação");
+        System.out.println(Cores.TEXT_CYAN_BOLD
+        +"\n1 - Adivinhação");
         System.out.println("2 - Forca");
         System.out.println("3 - Jogo da Memória ");
         System.out.println("0 - Sair\n");
