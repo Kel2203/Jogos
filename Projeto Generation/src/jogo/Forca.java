@@ -21,11 +21,11 @@ public class Forca extends Jogo{
        Imprimir.imprimirCabecalhoForca();
     }
 
-    @Override
-    public void jogar(){
-    	Scanner scanner = new Scanner(System.in);
+     @Override
+     public void jogar(){
+     	Scanner scanner = new Scanner(System.in);
 
-        Forca forca = new Forca();
+         Forca forca = new Forca();
         String palavraSecreta = forca.getPalavraSecretaRandom();
             palavraEmbaralhada = palavraSecreta.replaceAll(".", "*");
             erros = 0;
